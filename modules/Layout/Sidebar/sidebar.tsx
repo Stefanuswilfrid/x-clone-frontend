@@ -1,3 +1,4 @@
+import { JSX } from "react/jsx-runtime";
 
 export type NavLink = {
     href: string;
@@ -50,7 +51,11 @@ const navLinks: Readonly<NavLink[]> = [
 
 export function Sidebar(): JSX.Element {
     return (
-
+<header
+      id='sidebar'
+      className='flex w-0 shrink-0 transition-opacity duration-200 xs:w-20 md:w-24
+                 lg:max-w-none xl:-mr-4 xl:w-full xl:max-w-xs xl:justify-end'
+    ></header>
     )
 }
   
