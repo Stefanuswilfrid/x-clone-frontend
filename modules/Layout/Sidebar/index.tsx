@@ -6,6 +6,7 @@ import { NavItem } from "./navigation";
 import { HomeIcon, HomeIconInactive } from "@/components/Icons/home";
 import { usePathname } from "next/navigation";
 import { Search, SearchIconInactive } from "@/components/Icons/search";
+import { Dialog } from "@/components/UI/dialog";
 
 export default function Sidebar() {
   const { width } = useWindowSize();
@@ -15,7 +16,7 @@ export default function Sidebar() {
   return (
     <aside
       className={clsx(
-        "bg-blue-400 w-[calc(100%-var(--removed-body-scroll-bar-size))] xs:w-full",
+        "bg-background w-[calc(100%-var(--removed-body-scroll-bar-size))] xs:w-full",
         "xs:sticky xs:top-0 xs:py-4 xs:h-fit",
         "max-xs:h-[61px] max-xs:fixed max-xs:bottom-[calc(0px+env(safe-area-inset-bottom))] max-xs:border-t max-xs:border-t-divider"
       )}
@@ -24,25 +25,35 @@ export default function Sidebar() {
         <ul
           className={clsx(
             "grid xs:grid-rows-7 place-items-center gap-8",
-            "xs:ml-auto xs:w-[60px] xs:flex-col",
+            "xs:ml-auto  xs:flex-col",
             "max-xs:h-full max-xs:px-4 max-xs:grid-cols-6"
           )}
         >
-          <Tooltip label="Home" tabIndex={-1} side={side}>
             <NavItem href="/">
               {pathname === "/" ? <HomeIcon /> : <HomeIconInactive />}
             </NavItem>
-          </Tooltip>
 
-          <Tooltip label="Search ⌘K" tabIndex={-1} side={side}>
             <NavItem href="/search">
-            {pathname === "/search" ? <Search /> : <SearchIconInactive />}
-
-              {/* Add the Search Icon here */}
+            {pathname === "/search" ? <Search /> : <SearchIconInactive /> }
+            {"Explore"}
             </NavItem>
-          </Tooltip>
 
-          {/* Add additional NavItems here as needed */}
+            <li className="max-xs:hidden xs:-translate-y-1">
+            <Dialog canEscape={false} needAuth>
+              <Tooltip label="New Post" asChild>
+                <Dialog.Trigger asChild>
+                  <button className="w-9 h-9 active:opacity-80 duration-200 bg-primary rounded-full grid place-items-center">
+                    {/* <NewPost /> */}
+                    post
+                  </button>
+                </Dialog.Trigger>
+              </Tooltip>
+              {/* <Dialog.Content className="max-w-[480px]">
+                <NewThreadDialog />
+              </Dialog.Content> */}
+            </Dialog>
+          </li>
+
         </ul>
       </div>
     </aside>

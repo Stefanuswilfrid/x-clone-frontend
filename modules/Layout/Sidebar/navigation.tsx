@@ -10,16 +10,18 @@ export function NavItem({
     children,
     className,
     needAuth,
+    text
   }: {
     href: AvailableUrls
     children: React.ReactNode
     className?: string
     needAuth?: boolean
+    text?: string
   }) {
     // const { openAuthDialog, isAuthenticated } = useAuth()
   
     return (
-      <li className={cn('relative h-[28px] shrink-0', className)}>
+      <li className={cn('relative h-[28px] shrink-0 text-white', className)}>
         <Link
           scroll={false}
           onClick={(e) => {
@@ -28,10 +30,12 @@ export function NavItem({
             //   openAuthDialog()
             // }
           }}
-          className="active:opacity-80 rounded-md inline-block"
+          className="active:opacity-80 rounded-md gap-4 items-center flex"
           href={href as string}
         >
           {children}
+          <span className="">{text}</span>
+          
         </Link>
       </li>
     )

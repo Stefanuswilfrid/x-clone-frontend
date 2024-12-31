@@ -13,7 +13,7 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        background: '#222222',
+        background: '#000000',
         black: '#111111',
         'danger-soft': '#f04b4b',
         danger: '#f10000',

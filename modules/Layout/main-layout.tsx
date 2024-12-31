@@ -19,7 +19,7 @@ export type LayoutProps = {
 
 export function MainLayout({ children }: LayoutProps): JSX.Element {
   return (
-    <div className="flex w-full justify-center gap-0 lg:gap-4">
+    <div className=" bg-background flex w-full justify-center gap-0 lg:gap-4">
        <style jsx>{`
         #container {
           display: grid;
@@ -49,8 +49,8 @@ export function MainLayout({ children }: LayoutProps): JSX.Element {
           }
         }
       `}</style>
-      <div id="container" className="relative text-primary">
-      <Overlay />
+      <div id="container" className="relative text-black">
+      {/* <Overlay /> */}
 
       <Sidebar />
       <main className="border-x border-x-divider max-xs:border-none max-xs:pb-[60px]">
