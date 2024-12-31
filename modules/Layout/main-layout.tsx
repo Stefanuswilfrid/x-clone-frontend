@@ -2,7 +2,7 @@ import { WindowContextProvider } from "@/lib/context/window-context";
 import { ReactNode } from "react";
 import { DefaultToastOptions, Toaster } from "react-hot-toast";
 import { SWRConfig } from "swr";
-import { Sidebar } from "./Sidebar/sidebar";
+import { Sidebar } from "./Sidebar";
 import { fetchJSON } from "@/lib/fetch";
 import { JSX } from "react/jsx-runtime";
 

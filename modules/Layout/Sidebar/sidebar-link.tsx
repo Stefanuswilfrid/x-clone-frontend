@@ -1,8 +1,9 @@
 import { useRouter } from 'next/router';
 import Link from 'next/link';
+import { preventBubbling } from '@/lib/utils';
 import cn from 'clsx';
-import { preventBubbling } from '@lib/utils';
-import type { NavLink } from './sidebar';
+// import { preventBubbling } from '@lib/utils';
+import type { NavLink } from '.';
 import { JSX } from 'react/jsx-runtime';
 import { HeroIcon } from '@/components/Icons/hero-icon';
 
@@ -22,7 +23,7 @@ export function SidebarLink({
   const isActive = username ? asPath.includes(username) : asPath === href;
 
   return (
-    <Link href={href}>
+    <Link href={href} legacyBehavior>
       <a
         className={cn(
           'group py-1 outline-none',
