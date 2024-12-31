@@ -2,9 +2,9 @@ import { WindowContextProvider } from "@/lib/context/window-context";
 import { ReactNode } from "react";
 import { DefaultToastOptions, Toaster } from "react-hot-toast";
 import { SWRConfig } from "swr";
-import { Sidebar } from "./Sidebar";
 import { fetchJSON } from "@/lib/fetch";
 import { JSX } from "react/jsx-runtime";
+import Sidebar from "./Sidebar";
 
 const toastOptions: DefaultToastOptions = {
   style: {
@@ -21,16 +21,8 @@ export type LayoutProps = {
 export function MainLayout({ children }: LayoutProps): JSX.Element {
   return (
     <div className="flex w-full justify-center gap-0 lg:gap-4">
-      <WindowContextProvider>
-        <Sidebar />
-        <SWRConfig value={{ fetcher: fetchJSON }}>{children}</SWRConfig>
-      </WindowContextProvider>
+              <Sidebar />
 
-      <Toaster
-        position="bottom-center"
-        toastOptions={toastOptions}
-        containerClassName="mb-12 xs:mb-0"
-      />
     </div>
   );
 }
