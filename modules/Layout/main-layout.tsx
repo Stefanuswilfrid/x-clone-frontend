@@ -1,10 +1,9 @@
-import { WindowContextProvider } from "@/lib/context/window-context";
 import { ReactNode } from "react";
-import { DefaultToastOptions, Toaster } from "react-hot-toast";
-import { SWRConfig } from "swr";
-import { fetchJSON } from "@/lib/fetch";
+import { DefaultToastOptions } from "react-hot-toast";
+
 import { JSX } from "react/jsx-runtime";
 import Sidebar from "./Sidebar";
+import { Overlay } from "./overlay";
 
 const toastOptions: DefaultToastOptions = {
   style: {
@@ -21,8 +20,44 @@ export type LayoutProps = {
 export function MainLayout({ children }: LayoutProps): JSX.Element {
   return (
     <div className="flex w-full justify-center gap-0 lg:gap-4">
-              <Sidebar />
+       <style jsx>{`
+        #container {
+          display: grid;
+          grid-template-columns: minmax(60px, 290px) minmax(604px, 1fr) 300px;
+          width: 100%;
+          max-width: calc(290px + 604px + 300px);
+          margin: 0 auto;
+          min-height: 100vh;
+          min-height: 100dvh;
+        }
 
+        @media (max-width: 960px) {
+          #container {
+            grid-template-columns: 60px 1fr 300px;
+          }
+        }
+
+        @media (max-width: 781px) {
+          #container {
+            grid-template-columns: 60px 1fr;
+          }
+        }
+
+        @media (max-width: 522px) {
+          #container {
+            grid-template-columns: 1fr;
+          }
+        }
+      `}</style>
+      <div id="container" className="relative text-primary">
+      <Overlay />
+
+      <Sidebar />
+      <main className="border-x border-x-divider max-xs:border-none max-xs:pb-[60px]">
+          {children}
+        </main>
+        <></>
+      </div>
     </div>
   );
 }

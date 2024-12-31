@@ -5,6 +5,7 @@ import React from "react";
 import { NavItem } from "./navigation";
 import { HomeIcon, HomeIconInactive } from "@/components/Icons/home";
 import { usePathname } from "next/navigation";
+import { Search, SearchIconInactive } from "@/components/Icons/search";
 
 export default function Sidebar() {
   const { width } = useWindowSize();
@@ -35,6 +36,8 @@ export default function Sidebar() {
 
           <Tooltip label="Search ⌘K" tabIndex={-1} side={side}>
             <NavItem href="/search">
+            {pathname === "/search" ? <Search /> : <SearchIconInactive />}
+
               {/* Add the Search Icon here */}
             </NavItem>
           </Tooltip>
