@@ -34,7 +34,7 @@ export function NavItem({
           href={href as string}
         >
           {children}
-          <span className="">{text}</span>
+          <span className="hidden lg:block ">{text}</span>
           
         </Link>
       </li>

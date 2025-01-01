@@ -33,21 +33,18 @@ export default function Sidebar() {
               {pathname === "/" ? <HomeIcon /> : <HomeIconInactive />}
             </NavItem>
 
-            <NavItem href="/search">
+            <NavItem href="/search" text={"Explore"}>
             {pathname === "/search" ? <Search /> : <SearchIconInactive /> }
-            {"Explore"}
             </NavItem>
 
             <li className="max-xs:hidden xs:-translate-y-1">
             <Dialog canEscape={false} needAuth>
-              <Tooltip label="New Post" asChild>
                 <Dialog.Trigger asChild>
                   <button className="w-9 h-9 active:opacity-80 duration-200 bg-primary rounded-full grid place-items-center">
                     {/* <NewPost /> */}
                     post
                   </button>
                 </Dialog.Trigger>
-              </Tooltip>
               {/* <Dialog.Content className="max-w-[480px]">
                 <NewThreadDialog />
               </Dialog.Content> */}

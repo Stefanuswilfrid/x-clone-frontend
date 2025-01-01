@@ -33,13 +33,13 @@ export function MainLayout({ children }: LayoutProps): JSX.Element {
 
         @media (max-width: 960px) {
           #container {
-            grid-template-columns: 60px 1fr 300px;
+            grid-template-columns: 260px 1fr ;
           }
         }
 
         @media (max-width: 781px) {
           #container {
-            grid-template-columns: 60px 1fr;
+            grid-template-columns: 200px 1fr;
           }
         }
 
