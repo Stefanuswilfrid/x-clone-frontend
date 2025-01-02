@@ -1,10 +1,9 @@
 import React from 'react'
 
-import { Github } from '@/components/Icons'
-import { LinkButton } from '@/components/UI'
 
+// import { JobListings } from './JobListings'
 import { FooterButton } from './FooterButton'
-import { JobListings } from './JobListings'
+import { LinkButton } from '@/components/UI/Button/LinkButton'
 
 export function Footer() {
   return (
@@ -63,11 +62,11 @@ export function Footer() {
             href="https://github.com/thisissteven/posts"
             className="flex items-center justify-center gap-2 text-sm mt-2"
           >
-            <Github className="w-5 h-fit" /> View github source
+     View github source
           </LinkButton>
         </div>
 
-        <JobListings />
+        {/* <JobListings /> */}
       </footer>
     </>
   )

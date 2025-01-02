@@ -7,6 +7,7 @@ import { HomeIcon, HomeIconInactive } from "@/components/Icons/home";
 import { usePathname } from "next/navigation";
 import { Search, SearchIconInactive } from "@/components/Icons/search";
 import { Dialog } from "@/components/UI/dialog";
+import { RegularButton } from "@/components/UI/Button/RegularButton";
 
 export default function Sidebar() {
   const { width } = useWindowSize();
@@ -24,7 +25,7 @@ export default function Sidebar() {
       <div className="relative w-full h-full">
         <ul
           className={clsx(
-            "grid xs:grid-rows-7 place-items-center gap-8",
+            "grid xs:grid-rows-7 text-left gap-8",
             "xs:ml-auto  xs:flex-col",
             "max-xs:h-full max-xs:px-4 max-xs:grid-cols-6"
           )}
@@ -37,19 +38,29 @@ export default function Sidebar() {
             {pathname === "/search" ? <Search /> : <SearchIconInactive /> }
             </NavItem>
 
-            <li className="max-xs:hidden xs:-translate-y-1">
+            <RegularButton
+            isLoading={false}
+            className="accent-tab absolute right-4 -translate-y-[72px rounded-full  text-lg  text-black
+                       outline-none transition hover:brightness-90 active:brightness-75 xs:static xs:translate-y-0
+                         lg:w-8/12"
+
+            >
+              Tweet
+              </RegularButton>
+
+            {/* <li className="max-xs:hidden xs:-translate-y-1">
             <Dialog canEscape={false} needAuth>
                 <Dialog.Trigger asChild>
                   <button className="w-9 h-9 active:opacity-80 duration-200 bg-primary rounded-full grid place-items-center">
-                    {/* <NewPost /> */}
+                    <NewPost />
                     post
                   </button>
                 </Dialog.Trigger>
-              {/* <Dialog.Content className="max-w-[480px]">
+              <Dialog.Content className="max-w-[480px]">
                 <NewThreadDialog />
-              </Dialog.Content> */}
+              </Dialog.Content>
             </Dialog>
-          </li>
+          </li> */}
 
         </ul>
       </div>

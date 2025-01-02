@@ -1,8 +1,8 @@
 import React from 'react'
 
 
-import { LikeYellow } from '@/components/Icons'
-import { LinkButton, RegularButton } from '@/components/UI'
+import { RegularButton } from '@/components/UI/Button/RegularButton'
+import { LinkButton } from '@/components/UI/Button/LinkButton'
 
 
 export function FooterButton() {
@@ -14,7 +14,7 @@ export function FooterButton() {
     return (
       <RegularButton
         className="mt-3 w-full rounded-full py-2"
-        onClick={openAuthDialog}
+        onClick={()=>{}}
       >
         Log in with Read.cv
       </RegularButton>
@@ -27,7 +27,6 @@ export function FooterButton() {
       className="mt-3"
       href="https://read.cv/about/supporters"
     >
-      <LikeYellow />
       <span className="text-sm">Become a supporter</span>
     </LinkButton>
   )

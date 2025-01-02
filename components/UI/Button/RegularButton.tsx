@@ -2,7 +2,7 @@ import { Slot } from '@radix-ui/react-slot'
 import * as React from 'react'
 
 
-import { LoadingBar } from '..'
+import { LoadingBar } from '../Loader/LoadingBar'
 import { cn } from '@/lib/cn'
 
 type RegularButtonProps = {

@@ -4,6 +4,7 @@ import { DefaultToastOptions } from "react-hot-toast";
 import { JSX } from "react/jsx-runtime";
 import Sidebar from "./Sidebar";
 import { Overlay } from "./overlay";
+import { Footer } from "./Footer";
 
 const toastOptions: DefaultToastOptions = {
   style: {
@@ -56,7 +57,8 @@ export function MainLayout({ children }: LayoutProps): JSX.Element {
       <main className="border-x border-x-divider max-xs:border-none max-xs:pb-[60px]">
           {children}
         </main>
-        <></>
+        <Footer />
+
       </div>
     </div>
   );
