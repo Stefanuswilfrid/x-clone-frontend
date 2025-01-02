@@ -2,9 +2,9 @@ import { AxiosResponse } from 'axios'
 import React from 'react'
 import useSWRMutation from 'swr/mutation'
 
-import { apiClient } from '@/lib'
 
 import { MutationState, swrObserver } from './state'
+import { apiClient } from '@/lib/utils/api-client'
 
 export function useMutation<T>(
   key: string,
